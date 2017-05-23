@@ -3,7 +3,7 @@
 
 namespace update;
 
-class main {
+abstract class main {
 	function __construct(){
 		$cfg = array();
 		$root_folder = dirname(dirname(__FILE__));
@@ -57,11 +57,7 @@ class main {
 		return $str;
 	}
 
-	function update(){
-		files::getInstance()->_update();
-
-
-	}
+	abstract function update();
 
 
 

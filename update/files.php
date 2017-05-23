@@ -17,7 +17,7 @@ class files extends main {
 
 		return self::$instance;
 	}
-	function _update(){
+	function update(){
 		echo "hai";
 		exit("woof");
 		echo $this->heading("FILES",true);
