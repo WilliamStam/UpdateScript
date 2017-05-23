@@ -24,6 +24,7 @@ class update {
 		return self::$instance;
 	}
 	function update(){
+		echo "Updating...." . PHP_EOL;
 			files::getInstance()->update();
 			database::getInstance()->update();
 
