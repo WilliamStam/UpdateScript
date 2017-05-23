@@ -3,7 +3,7 @@
 
 namespace update;
 
-class exec extends _ {
+class update extends _ {
 	private static $instance;
 	function __construct(){
 
