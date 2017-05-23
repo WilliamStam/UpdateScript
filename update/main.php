@@ -25,23 +25,30 @@ class main {
 		$this->cfg = $cfg;
 		$this->root = $root_folder;
 
-	}
-	private function section($heading){
+		$this->heading_padding = 50;
 
+	}
+	private function heading($heading,$main=false){
 		$str = PHP_EOL;
-		$str .= "----------------------".PHP_EOL;
-		$str .= "* {$heading}".PHP_EOL;
-		$str .= "----------------------".PHP_EOL;
+		if ($main){
+			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
+			$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
+			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
+		} else {
+
+			$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
+		}
+
 
 
 		return $this->output($str);
 	}
 	function files(){
-		echo $this->output("---- FILES ----".PHP_EOL);
+		echo $this->heading("FILES",true);
 
-		echo $this->section("Git Start");
+		echo $this->heading("Git Start");
 		echo $this->output($this->_git_init());
-		echo $this->section("Git Pull");
+		echo $this->heading("Git Pull");
 		echo $this->output($this->_git_pull());
 
 
