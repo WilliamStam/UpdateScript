@@ -9,6 +9,7 @@ class database extends _ {
 
 		parent::__construct();
 
+		_::__construct();
 
 print_r($this->cfg);
 		exit();
