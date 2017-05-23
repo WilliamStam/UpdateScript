@@ -11,7 +11,10 @@ class update {
 
 		//parent::__construct();
 		foreach(glob($dir.DIRECTORY_SEPARATOR."*.php") as $file){
-			require_once($file);
+			if (!strpos($file,"db_update.php")){
+				require_once($file);
+			}
+
 		}
 
 
@@ -25,7 +28,7 @@ class update {
 	}
 	function update(){
 		echo "Updating...." . PHP_EOL;
-			files::getInstance()->update();
+			//files::getInstance()->update();
 			database::getInstance()->update();
 
 

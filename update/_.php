@@ -34,12 +34,11 @@ abstract class _ {
 
 		if ($main){
 			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
-			$str .= str_pad($heading, strlen($heading) + 10, "*", STR_PAD_BOTH).PHP_EOL;
-			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
+			$str .= str_pad($heading, strlen($heading) + 6, "*", STR_PAD_BOTH).PHP_EOL;
+			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH);
 		} else {
 
 			$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
-			$str .= PHP_EOL;
 		}
 
 
@@ -48,7 +47,7 @@ abstract class _ {
 	}
 	function output($str){
 
-
+		$str = $str . PHP_EOL;
 
 
 		if (php_sapi_name() != 'cli'){

@@ -33,20 +33,14 @@ class files extends _ {
 	private function _git_init(){
 		$return = "";
 		if (!file_exists($this->root."\\.git")) {
-			$return .= shell_exec('git init 2>&1 &');
-			$return .= PHP_EOL;
+			echo $this->output(shell_exec('git init 2>&1 &'));
 		} else {
-			$return .= shell_exec('git reset --hard HEAD 2>&1 &');
-			$return .= PHP_EOL;
-			$return .= shell_exec('git stash 2>&1 &');
-			$return .= PHP_EOL;
+			echo $this->output(shell_exec('git reset --hard HEAD 2>&1 &'));
+			echo $this->output(shell_exec('git stash 2>&1 &'));
 		}
-		return $return;
 	}
 	private function _git_pull(){
-		$output = shell_exec('git pull https://'.$this->cfg['git']['username'] .':'.$this->cfg['git']['password'] .'@'.$this->cfg['git']['path'] .' ' . $this->cfg['git']['branch'] . ' 2>&1 &');
-		$output .= PHP_EOL;
-		return $output;
+		echo $this->output(shell_exec('git pull https://'.$this->cfg['git']['username'] .':'.$this->cfg['git']['password'] .'@'.$this->cfg['git']['path'] .' ' . $this->cfg['git']['branch'] . ' 2>&1 &'));
 	}
 
 
