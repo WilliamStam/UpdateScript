@@ -41,7 +41,7 @@ class files extends _ {
 			echo $this->output(shell_exec('git init 2>&1 &'));
 		} else {
 			echo $this->output(shell_exec('git reset --hard HEAD 2>&1 &'));
-			echo $this->output(shell_exec('git stash 2>&1 &'));
+			//echo $this->output(shell_exec('git stash 2>&1 &'));
 		}
 	}
 	private function _git_pull(){

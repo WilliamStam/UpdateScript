@@ -5,8 +5,8 @@ $cfg['DB']['password'] = "";
 $cfg['DB']['database'] = "gamequery";
 
 $cfg['git'] = array(
-	'username'=>"",
-	"password"=>"",
+	'username'=>"woof",
+	"password"=>"hmm",
 	"path"=>"github.com/WilliamStam/UpdateScript",
 	"branch"=>"master"
 );
