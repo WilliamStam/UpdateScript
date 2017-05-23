@@ -28,9 +28,12 @@ class main {
 	}
 	function files(){
 		echo $this->output("Updating files...".PHP_EOL.PHP_EOL);
+
 		echo $this->output("* Git Start".PHP_EOL);
+		echo $this->output("----------------------".PHP_EOL);
 		echo $this->output($this->_git_init());
 		echo $this->output("* Git Pull".PHP_EOL);
+		echo $this->output("----------------------".PHP_EOL);
 		echo $this->output($this->_git_pull());
 	}
 	private function _git_init(){
