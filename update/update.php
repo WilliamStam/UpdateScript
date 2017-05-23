@@ -19,9 +19,15 @@ class update extends _{
 
 	function update(){
 		echo $this->heading("UPDATING ALL",1);
-		//files::getInstance()->update();
-		composer::getInstance()->update();
-		//database::getInstance()->update();
+		if (isset($this->cfg['git'])){
+			files::getInstance()->update();
+		}
+		if (file_exists("../composer.lock")){
+			composer::getInstance()->update();
+		}
+		if (isset($this->cfg['DB'])){
+			database::getInstance()->update();
+		}
 	}
 
 }

@@ -127,7 +127,7 @@ class database extends _ {
 				echo $this->output(" * updating: $i");
 				mysqli_query($this->link,$item) or die(mysqli_error($this->link));
 				$this->db_version = $i;
-				//mysqli_query($this->link,"UPDATE system SET `value`='{$i}' WHERE `system`='db_version'") or die(mysqli_error($this->link));
+				mysqli_query($this->link,"UPDATE system SET `value`='{$i}' WHERE `system`='db_version'") or die(mysqli_error($this->link));
 			}
 
 		}
