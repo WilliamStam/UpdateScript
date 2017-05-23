@@ -2,12 +2,12 @@
 
 
 namespace update;
-
 class files extends _ {
 	private static $instance;
 	function __construct(){
 
 		parent::__construct();
+
 
 
 
@@ -23,7 +23,9 @@ class files extends _ {
 	function update(){
 
 
-		echo $this->heading("FILES",true);
+
+
+		echo $this->heading("FILES",2);
 
 		echo $this->heading("Git Start");
 		echo $this->output($this->_git_init());

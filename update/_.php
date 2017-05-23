@@ -3,7 +3,7 @@
 
 namespace update;
 
-class _ {
+abstract class _ {
 	function __construct(){
 		$cfg = array();
 		$root_folder = dirname(dirname(__FILE__));
@@ -16,29 +16,39 @@ class _ {
 
 
 		$cfg = array();
-		require_once($root_folder.'config.default.inc.php');
+		require($root_folder.'config.default.inc.php');
 		if (file_exists($root_folder."config.inc.php")) {
-			require_once($root_folder.'config.inc.php');
+			require($root_folder.'config.inc.php');
 		}
 
 
 		$this->cfg = $cfg;
 		$this->root = $root_folder;
 		$this->heading_padding = 50;
+
 	}
 
-	function heading($heading,$main=false){
+	function heading($heading,$level=3){
 		$str = PHP_EOL;
 		$heading = " " . $heading . " ";
 
-		if ($main){
-			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
-			$str .= str_pad($heading, strlen($heading) + 6, "*", STR_PAD_BOTH).PHP_EOL;
-			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH);
-		} else {
+		switch ($level){
+			case 1:
+				$str .= "* " . $heading.PHP_EOL;
+				$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH);
+				break;
+			case 2:
+				$str .= PHP_EOL;
+				$str .= " * " . $heading.PHP_EOL;
+				$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH);
 
-			$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
+				break;
+			default:
+				$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
+
+				break;
 		}
+
 
 
 
@@ -55,7 +65,7 @@ class _ {
 		return $str;
 	}
 
-
+	abstract function update();
 
 
 

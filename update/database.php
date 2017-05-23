@@ -2,20 +2,18 @@
 
 
 namespace update;
-
 class database extends _ {
 	private static $instance;
 	function __construct(){
 		parent::__construct();
 
-		print_r($this->cfg);
-		exit();
 		$this->link = mysqli_connect($this->cfg['DB']['host'], $this->cfg['DB']['username'], $this->cfg['DB']['password'], $this->cfg['DB']['database']);
 
 		if (mysqli_connect_errno()) {
 			printf("Connect failed: %s\n", mysqli_connect_error());
 			exit();
 		}
+
 		$this->db_version = 0;
 		$this->updates = false;
 
@@ -32,7 +30,10 @@ class database extends _ {
 	function update(){
 
 
-		echo $this->heading("DATABASE",true);
+
+
+
+		echo $this->heading("DATABASE",2);
 
 		echo $this->heading("Version");
 		$this->_get_version();
@@ -51,7 +52,6 @@ class database extends _ {
 
 		}
 
-		//print_r($sql);
 
 
 
