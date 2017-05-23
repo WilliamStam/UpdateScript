@@ -18,8 +18,8 @@ class files extends _ {
 		return self::$instance;
 	}
 	function update(){
-		echo "hai";
-		exit("woof");
+
+
 		echo $this->heading("FILES",true);
 
 		echo $this->heading("Git Start");
