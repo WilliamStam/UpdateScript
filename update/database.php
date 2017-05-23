@@ -6,7 +6,7 @@ namespace update;
 class database extends _ {
 	private static $instance;
 	function __construct(){
-		$this->construct();
+		parent::__construct();
 
 		print_r($this->cfg);
 		exit();

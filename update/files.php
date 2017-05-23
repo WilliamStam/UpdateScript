@@ -7,8 +7,8 @@ class files extends _ {
 	private static $instance;
 	function __construct(){
 
-		//parent::__construct();
-		$this->construct();
+		parent::__construct();
+
 
 
 
