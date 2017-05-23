@@ -28,7 +28,7 @@ class main {
 		$this->heading_padding = 50;
 
 	}
-	private function heading($heading,$main=false){
+	function heading($heading,$main=false){
 		$str = PHP_EOL;
 		$heading = " " . $heading . " ";
 
@@ -46,36 +46,7 @@ class main {
 
 		return $this->output($str);
 	}
-	function files(){
-		echo $this->heading("FILES",true);
-
-		echo $this->heading("Git Start");
-		echo $this->output($this->_git_init());
-		echo $this->heading("Git Pull");
-		echo $this->output($this->_git_pull());
-
-
-
-	}
-	private function _git_init(){
-		$return = "";
-		if (!file_exists($this->root."\\.git")) {
-			$return .= shell_exec('git init 2>&1');
-			$return .= PHP_EOL;
-		} else {
-			$return .= shell_exec('git reset --hard HEAD 2>&1');
-			$return .= PHP_EOL;
-			$return .= shell_exec('git stash 2>&1');
-			$return .= PHP_EOL;
-		}
-		return $return;
-	}
-	private function _git_pull(){
-		$output = shell_exec('git pull https://'.$this->cfg['git']['username'] .':'.$this->cfg['git']['password'] .'@'.$this->cfg['git']['path'] .' ' . $this->cfg['git']['branch'] . ' 2>&1');
-		$output .= PHP_EOL;
-		return $output;
-	}
-	private function output($str){
+	function output($str){
 
 
 
@@ -85,6 +56,13 @@ class main {
 		}
 		return $str;
 	}
+
+	function update(){
+		files::getInstance()->files();
+
+
+	}
+
 
 
 }
