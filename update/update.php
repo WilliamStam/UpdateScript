@@ -22,6 +22,8 @@ class update {
 			require_once($root_folder.'config.inc.php');
 		}
 
+		$this->cfg = $cfg;
+		$this->root = $root_folder;
 
 		$dir = dirname( __FILE__ );
 
