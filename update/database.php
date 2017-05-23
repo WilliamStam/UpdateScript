@@ -3,17 +3,11 @@
 
 namespace update;
 
-class update {
+class database extends _ {
 	private static $instance;
 	function __construct(){
 
-		$dir = dirname( __FILE__ );
-
-		//parent::__construct();
-		foreach(glob($dir.DIRECTORY_SEPARATOR."*.php") as $file){
-			require_once($file);
-		}
-
+		parent::__construct();
 
 	}
 	public static function getInstance() {
@@ -24,13 +18,24 @@ class update {
 		return self::$instance;
 	}
 	function update(){
-			files::getInstance()->update();
-			database::getInstance()->update();
+
+
+		echo $this->heading("DATABASE",true);
+
+
 
 
 
 	}
+	private function _backup(){
+		$return = "";
 
+		return $return;
+	}
+	private function _update_db(){
+		$output = "";
+		return $output;
+	}
 
 
 
