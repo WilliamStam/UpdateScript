@@ -3,11 +3,17 @@
 
 namespace update;
 
-class update extends _ {
+class update {
 	private static $instance;
 	function __construct(){
 
-		parent::__construct();
+		$dir = dirname( __FILE__ );
+
+		//parent::__construct();
+		foreach(glob($dir.DIRECTORY_SEPARATOR."*.php") as $file){
+			require_once($file);
+		}
+
 
 	}
 	public static function getInstance() {
@@ -20,7 +26,7 @@ class update extends _ {
 	function update(){
 			files::getInstance()->update();
 
-
+echo "hmm";
 
 	}
 
