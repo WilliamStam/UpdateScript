@@ -15,7 +15,7 @@ abstract class _ {
 		ini_set("error_log", $errorFile);
 
 
-
+		$cfg = array();
 		require_once($root_folder.'config.default.inc.php');
 		if (file_exists($root_folder."config.inc.php")) {
 			require_once($root_folder.'config.inc.php');

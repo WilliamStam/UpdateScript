@@ -28,7 +28,7 @@ class update {
 	}
 	function update(){
 		echo "Updating...." . PHP_EOL;
-			//files::getInstance()->update();
+			files::getInstance()->update();
 			database::getInstance()->update();
 
 
