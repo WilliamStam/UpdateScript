@@ -8,6 +8,8 @@ class database extends _ {
 	function __construct(){
 		$this->construct();
 
+		print_r($this->cfg);
+		exit();
 		$this->link = mysqli_connect($this->cfg['DB']['host'], $this->cfg['DB']['username'], $this->cfg['DB']['password'], $this->cfg['DB']['database']);
 
 		if (mysqli_connect_errno()) {
