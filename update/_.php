@@ -6,7 +6,7 @@ namespace update;
 abstract class _ {
 	function __construct(){
 
-
+		$this->heading_padding = 50;
 	}
 
 	function heading($heading,$main=false){

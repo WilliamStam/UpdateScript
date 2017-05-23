@@ -6,6 +6,7 @@ namespace update;
 class update {
 	private static $instance;
 	function __construct(){
+
 		$cfg = array();
 		$root_folder = dirname(dirname(__FILE__));
 		chdir($root_folder);
@@ -26,7 +27,7 @@ class update {
 		$this->cfg = $cfg;
 		$this->root = $root_folder;
 
-		$this->heading_padding = 50;
+
 
 		$dir = dirname( __FILE__ );
 
