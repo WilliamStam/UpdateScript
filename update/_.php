@@ -57,9 +57,16 @@ abstract class _ {
 	function output($str){
 
 		$str = $str . PHP_EOL;
-		$str = str_replace("https://".$this->cfg['git']['username'].':'.$this->cfg['git']['password'] .'@',"&lt; auth &gt;",$str);
-		$str = str_replace($this->cfg['git']['password'],"********",$str);
-		$str = str_replace($this->cfg['DB']['password'],"********",$str);
+		if ($this->cfg['git']['username'] && $this->cfg['git']['password']){
+			$str = str_replace("https://".$this->cfg['git']['username'].':'.$this->cfg['git']['password'] .'@',"&lt; auth &gt;",$str);
+		}
+		if ($this->cfg['git']['password']){
+			$str = str_replace($this->cfg['git']['password'],"********",$str);
+		}
+		if ($this->cfg['DB']['password']){
+			$str = str_replace($this->cfg['DB']['password'],"********",$str);
+		}
+
 
 
 		if (php_sapi_name() != 'cli'){
