@@ -28,7 +28,8 @@ class main {
 	}
 	private function section($heading){
 
-		$str = "----------------------".PHP_EOL;
+		$str = PHP_EOL;
+		$str .= "----------------------".PHP_EOL;
 		$str .= "* {$heading}".PHP_EOL;
 		$str .= "----------------------".PHP_EOL;
 
