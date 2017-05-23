@@ -34,7 +34,7 @@ class main {
 
 		if ($main){
 			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
-			$str .= str_pad($heading, $this->heading_padding, " ", STR_PAD_BOTH).PHP_EOL;
+			$str .= substr(str_pad($heading, $this->heading_padding, "*", STR_PAD_BOTH),0,$this->heading_padding).PHP_EOL;
 			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
 		} else {
 
