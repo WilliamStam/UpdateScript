@@ -34,7 +34,7 @@ abstract class _ {
 
 		if ($main){
 			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
-			$str .= str_pad($heading, 5, "-", STR_PAD_BOTH).PHP_EOL;
+			$str .= str_pad($heading, strlen($heading) + 10, "-", STR_PAD_BOTH).PHP_EOL;
 			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
 		} else {
 
