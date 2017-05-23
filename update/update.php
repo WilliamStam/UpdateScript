@@ -19,8 +19,9 @@ class update extends _{
 
 	function update(){
 		echo $this->heading("UPDATING ALL",1);
-		files::getInstance()->update();
-		database::getInstance()->update();
+		//files::getInstance()->update();
+		composer::getInstance()->update();
+		//database::getInstance()->update();
 	}
 
 }
