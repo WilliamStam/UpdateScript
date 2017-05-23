@@ -5,6 +5,10 @@ namespace update;
 
 abstract class _ {
 	function __construct(){
+		$this->construct();
+
+	}
+	function construct(){
 		$cfg = array();
 		$root_folder = dirname(dirname(__FILE__));
 		chdir($root_folder);
@@ -26,7 +30,6 @@ abstract class _ {
 		$this->root = $root_folder;
 
 		$this->heading_padding = 50;
-
 	}
 	function heading($heading,$main=false){
 		$str = PHP_EOL;

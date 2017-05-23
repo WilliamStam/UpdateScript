@@ -6,15 +6,7 @@ namespace update;
 class database extends _ {
 	private static $instance;
 	function __construct(){
-
-		parent::__construct();
-
-		_::__construct();
-
-print_r($this->cfg);
-		exit();
-
-
+		$this->construct();
 
 		$this->link = mysqli_connect($this->cfg['DB']['host'], $this->cfg['DB']['username'], $this->cfg['DB']['password'], $this->cfg['DB']['database']);
 
