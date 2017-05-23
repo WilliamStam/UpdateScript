@@ -8,7 +8,7 @@ class files extends _ {
 	function __construct(){
 
 		parent::__construct();
-
+		_::__construct();
 	}
 	public static function getInstance() {
 		if (is_null(self::$instance)) {
