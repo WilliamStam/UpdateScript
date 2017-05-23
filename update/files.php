@@ -17,7 +17,7 @@ class files extends main {
 
 		return self::$instance;
 	}
-	function update(){
+	function _update(){
 		echo $this->heading("FILES",true);
 
 		echo $this->heading("Git Start");

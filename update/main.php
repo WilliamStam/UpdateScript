@@ -58,7 +58,7 @@ class main {
 	}
 
 	function update(){
-		files::getInstance()->update();
+		files::getInstance()->_update();
 
 
 	}
