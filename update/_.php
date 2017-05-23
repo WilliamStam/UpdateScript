@@ -58,6 +58,10 @@ abstract class _ {
 
 		$str = $str . PHP_EOL;
 
+		$str = str_replace($this->cfg['git']['password'],"********",$str);
+		$str = str_replace($this->cfg['git']['username'],"aa",$str);
+		$str = str_replace($this->cfg['DB']['password'],"********",$str);
+
 
 		if (php_sapi_name() != 'cli'){
 			$str = str_replace(PHP_EOL, "</br>", $str);
