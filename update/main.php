@@ -26,15 +26,25 @@ class main {
 		$this->root = $root_folder;
 
 	}
+	private function section($heading){
+
+		$str = "----------------------".PHP_EOL;
+		$str .= "* {$heading}".PHP_EOL;
+		$str .= "----------------------".PHP_EOL;
+
+
+		return $this->output($str);
+	}
 	function files(){
 		echo $this->output("Updating files...".PHP_EOL.PHP_EOL);
 
-		echo $this->output("* Git Start".PHP_EOL);
-		echo $this->output("----------------------".PHP_EOL);
+		echo $this->section("Git Start");
 		echo $this->output($this->_git_init());
-		echo $this->output("* Git Pull".PHP_EOL);
-		echo $this->output("----------------------".PHP_EOL);
+		echo $this->section("Git Pull");
 		echo $this->output($this->_git_pull());
+
+
+
 	}
 	private function _git_init(){
 		$return = "";
