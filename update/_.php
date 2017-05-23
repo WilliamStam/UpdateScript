@@ -3,7 +3,7 @@
 
 namespace update;
 
-abstract class _ {
+class _ {
 	function __construct(){
 		$cfg = array();
 		$root_folder = dirname(dirname(__FILE__));
@@ -55,7 +55,7 @@ abstract class _ {
 		return $str;
 	}
 
-	abstract function update();
+
 
 
 
