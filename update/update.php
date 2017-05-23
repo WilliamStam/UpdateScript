@@ -26,7 +26,7 @@ class update {
 	function update(){
 			files::getInstance()->update();
 
-echo "hmm";
+
 
 	}
 
