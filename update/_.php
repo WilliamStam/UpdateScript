@@ -44,7 +44,7 @@ abstract class _ {
 
 				break;
 			default:
-				$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
+				$str .= " --- " . $heading . "---";
 
 				break;
 		}
