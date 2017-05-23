@@ -3,7 +3,7 @@
 
 namespace update;
 
-class files extends main {
+class files extends _ {
 	private static $instance;
 	function __construct(){
 

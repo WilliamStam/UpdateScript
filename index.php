@@ -1,6 +1,6 @@
 <?php
 
-require_once('update/main.php');
+require_once('update/exec.php');
 
-$update = new update\update();
-$update->update();
+
+\update\exec::getInstance()->update();

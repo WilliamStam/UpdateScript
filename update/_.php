@@ -3,7 +3,7 @@
 
 namespace update;
 
-abstract class main {
+abstract class _ {
 	function __construct(){
 		$cfg = array();
 		$root_folder = dirname(dirname(__FILE__));
