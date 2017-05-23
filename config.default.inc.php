@@ -2,7 +2,7 @@
 $cfg['DB']['host'] = "localhost";
 $cfg['DB']['username'] = "";
 $cfg['DB']['password'] = "";
-$cfg['DB']['database'] = "ad-server-v3";
+$cfg['DB']['database'] = "gamequery";
 
 $cfg['git'] = array(
 	'username'=>"",

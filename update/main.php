@@ -8,9 +8,9 @@ class main {
 		$cfg = array();
 		$root_folder = dirname(dirname(__FILE__));
 		chdir($root_folder);
+		$root_folder = $root_folder . DIRECTORY_SEPARATOR;
 
-
-		$errorFolder = "." . DIRECTORY_SEPARATOR . "update" . DIRECTORY_SEPARATOR . "logs";
+		$errorFolder = $root_folder . "update" . DIRECTORY_SEPARATOR . "logs";
 		$errorFile = $errorFolder . DIRECTORY_SEPARATOR . "php-".date("Y-m") . ".log";
 		ini_set("error_log", $errorFile);
 
