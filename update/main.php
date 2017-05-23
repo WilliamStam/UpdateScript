@@ -37,7 +37,7 @@ class main {
 		return $this->output($str);
 	}
 	function files(){
-		echo $this->output("Updating files...".PHP_EOL.PHP_EOL);
+		echo $this->output("---- FILES ----".PHP_EOL);
 
 		echo $this->section("Git Start");
 		echo $this->output($this->_git_init());
