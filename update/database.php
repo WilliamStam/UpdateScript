@@ -8,17 +8,11 @@ class database extends _ {
 	function __construct(){
 
 		parent::__construct();
-		$root_folder = dirname(dirname(__FILE__));
-		chdir($root_folder);
-		$root_folder = $root_folder . DIRECTORY_SEPARATOR;
-		$cfg = array();
-		require_once($root_folder.'config.default.inc.php');
-		if (file_exists($root_folder."config.inc.php")) {
-			require_once($root_folder.'config.inc.php');
-		}
 
 
-		$this->cfg = $cfg;
+print_r($this->cfg);
+		exit();
+
 
 
 		$this->link = mysqli_connect($this->cfg['DB']['host'], $this->cfg['DB']['username'], $this->cfg['DB']['password'], $this->cfg['DB']['database']);
