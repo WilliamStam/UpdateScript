@@ -30,13 +30,16 @@ class main {
 	}
 	private function heading($heading,$main=false){
 		$str = PHP_EOL;
+		$heading = " " . $heading . " ";
+
 		if ($main){
 			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
-			$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
+			$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
 			$str .= str_pad("-", $this->heading_padding, "-", STR_PAD_BOTH).PHP_EOL;
 		} else {
 
 			$str .= str_pad($heading, $this->heading_padding, "-", STR_PAD_BOTH);
+			$str .= PHP_EOL;
 		}
 
 
