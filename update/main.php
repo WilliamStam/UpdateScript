@@ -27,9 +27,9 @@ class main {
 
 	}
 	function files(){
-		echo "Updating files...".PHP_EOL;
-		echo $this->_git_init();
-		echo $this->_git_pull();
+		echo $this->output("Updating files...".PHP_EOL.PHP_EOL);
+		echo $this->output($this->_git_init());
+		echo $this->output($this->_git_pull());
 	}
 	private function _git_init(){
 		$return = "";
@@ -42,16 +42,21 @@ class main {
 			$return .= shell_exec('git stash 2>&1');
 			$return .= PHP_EOL;
 		}
-		return $this->output($return);
+		return $return;
 	}
 	private function _git_pull(){
 		$output = shell_exec('git pull https://'.$this->cfg['git']['username'] .':'.$this->cfg['git']['password'] .'@'.$this->cfg['git']['path'] .' ' . $this->cfg['git']['branch'] . ' 2>&1');
 		$output .= PHP_EOL;
-		return  $this->output($output);
+		return $output;
 	}
 	private function output($str){
 
 
+
+
+		if (php_sapi_name() != 'cli'){
+			$str = str_replace(PHP_EOL, "</br>", $str);
+		}
 		return $str;
 	}
 
